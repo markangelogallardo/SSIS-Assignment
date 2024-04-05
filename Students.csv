@@ -1,0 +1,97 @@
+ID Number,Name ,Year Level,Gender,Enrollment Status, Course
+2022-0182,Mark Angelo L. Gallardo,2,Male,Not Enrolled,
+2022-4258,Laye Ryan Llamra,3,Female,Enrolled,BETCHET
+2078-9012,Jane Smith,2,Female,Not Enrolled,
+2089-0123,David Johnson,4,Male,Not Enrolled,
+2090-1234,Emily Brown,1,Female,Not Enrolled,
+2011-2345,Michael Davis,3,Male,Not Enrolled,
+2012-3456,Olivia Wilson,2,Female,Not Enrolled,
+2013-4567,William Martinez,4,Male,Enrolled,BETCHET
+2014-5678,Sophia Anderson,1,Female,Enrolled,BETCHET
+2015-6789,James Taylor,3,Male,Not Enrolled,
+2016-7890,Emma Thomas,2,Female,Not Enrolled,
+2017-8901,Daniel Hernandez,4,Male,Enrolled,BETMMT
+2018-9012,Ava Moore,1,Female,Enrolled,BETMMT
+2019-0123,Joseph Garcia,3,Male,Not Enrolled,
+2020-1234,Isabella Martin,2,Female,Not Enrolled,
+2021-2345,Christopher Rodriguez,4,Male,Enrolled,BSTE
+2022-3456,Abigail Lee,1,Female,Enrolled,BETMMT
+2023-4567,Matthew Perez,3,Male,Not Enrolled,
+2024-5678,Charlotte Gonzales,2,Female,Not Enrolled,
+2025-6789,Andrew Lopez,4,Male,Enrolled,BETMMT
+2026-7890,Evelyn Harris,1,Female,Enrolled,BAHIS
+2027-8901,Alexander Sanchez,3,Male,Not Enrolled,
+2028-9012,Amelia Clark,2,Female,Not Enrolled,
+2029-0123,David Lewis,4,Male,Enrolled,BAHIS
+2030-1234,Madison Lewis,1,Female,Enrolled,BAHIS
+2031-2345,Nicholas Young,3,Male,Not Enrolled,
+2032-3456,Grace Hall,2,Female,Not Enrolled,
+2033-4567,Ryan Allen,4,Male,Enrolled,BAHIS
+2034-5678,Chloe Scott,1,Female,Enrolled,BAPOLSCI
+2035-6789,Brandon Green,3,Male,Not Enrolled,
+2036-7890,Zoey Baker,2,Female,Not Enrolled,
+2037-8901,Jonathan Adams,4,Male,Enrolled,BAPOLSCI
+2038-9012,Natalie King,1,Female,Enrolled,BAPOLSCI
+2039-0123,Samuel Wright,3,Male,Not Enrolled,
+2040-1234,Lily Turner,2,Female,Not Enrolled,
+2041-2345,Tyler Parker,4,Male,Enrolled,BAPOLSCI
+2042-3456,Alyssa Cooper,1,Female,Enrolled,BSN
+2043-4567,Christian Ross,3,Male,Not Enrolled,
+2044-5678,Hannah Morgan,2,Female,Not Enrolled,
+2045-6789,Dylan Bell,4,Male,Enrolled,BSN
+2046-7890,Avery Coleman,1,Female,Enrolled,BSN
+2047-8901,Benjamin Reed,3,Male,Not Enrolled,
+2048-9012,Lauren Long,2,Female,Not Enrolled,
+2049-0123,Gabriel Murphy,4,Male,Enrolled,BSN
+2050-1234,Victoria Rivera,1,Female,Enrolled,BSN
+2051-2345,Jackson Ward,3,Male,Not Enrolled,
+2052-3456,Samantha Bailey,2,Female,Not Enrolled,
+2053-4567,Logan Hughes,4,Male,Enrolled,BAELS
+2054-5678,Sophie Diaz,1,Female,Enrolled,BAELS
+2055-6789,Kevin Foster,3,Male,Not Enrolled,
+2056-7890,Alexis Russell,2,Female,Not Enrolled,
+2057-8901,Isaac Barnes,4,Male,Enrolled,BAELS
+2058-9012,Ashley Price,1,Female,Enrolled,BAELS
+2059-0123,Caleb Powell,3,Male,Not Enrolled,
+2060-1234,Aria Jenkins,2,Female,Not Enrolled,
+2061-2345,Ethan Perry,4,Male,Enrolled,BAELS
+2062-3456,Mia Brooks,1,Female,Enrolled,BSME
+2063-4567,Nathan Griffin,3,Male,Not Enrolled,
+2064-5678,Ella Hayes,2,Female,Not Enrolled,
+2065-6789,Thomas Simmons,4,Male,Enrolled,BSME
+2066-7890,Scarlett Sanders,1,Female,Enrolled,BSME
+2068-9012,Jason Howard,3,Male,Not Enrolled,
+2069-0123,Aurora Ramirez,2,Female,Not Enrolled,
+2070-1234,Justin Butler,4,Male,Enrolled,BSME
+2071-2345,Leah Cooper,1,Female,Enrolled,BSME
+2072-3456,Aaron Coleman,3,Male,Not Enrolled,
+2073-4567,Savannah Nelson,2,Female,Not Enrolled,
+2074-5678,Jeremiah Ward,4,Male,Enrolled,BSME
+2075-6789,Layla Coleman,1,Female,Enrolled,BSME
+2076-7890,Charles Richardson,3,Male,Not Enrolled,
+2077-8901,Kylie Bennett,2,Female,Not Enrolled,
+2079-0123,Elijah Barnes,4,Male,Enrolled,BETMET
+2080-1234,Bella Coleman,1,Female,Enrolled,BETMET
+2081-2345,Adrian Rogers,3,Male,Not Enrolled,
+2082-3456,Lucy Kelly,2,Female,Not Enrolled,
+2083-4567,Juan Peterson,4,Male,Enrolled,BETMET
+2084-5678,Ariana Price,1,Female,Enrolled,BETMET
+2085-6789,Kyle Rivera,3,Male,Not Enrolled,
+2086-7890,Maria Cox,2,Female,Not Enrolled,
+2087-8901,Jaden Reed,4,Male,Enrolled,BSCHEM
+2088-9012,Maya Mitchell,1,Female,Enrolled,BSCHEM
+2091-0123,Julian Coleman,3,Male,Not Enrolled,
+2092-1234,Riley Cooper,2,Female,Not Enrolled,
+2093-2345,Carlos Stewart,4,Male,Enrolled,BSCHEM
+2094-3456,Elena Barnes,1,Female,Enrolled,BSCHEM
+2095-4567,Jaxon Coleman,3,Male,Not Enrolled,
+2096-5678,Brooklyn Phillips,2,Female,Not Enrolled,
+2097-6789,Ian Barnes,4,Male,Enrolled,BSCHEM
+2098-7890,Hailey Gray,1,Female,Enrolled,BSBIO-ANBIO
+2099-8901,Dominic Coleman,3,Male,Not Enrolled,
+2100-9012,Aubrey Coleman,2,Female,Not Enrolled,
+2101-0123,Adam Coleman,4,Male,Enrolled,BSBIO-ANBIO
+2102-1234,Clara Coleman,1,Female,Enrolled,BSBIO-ANBIO
+2103-2345,Tristan Coleman,3,Male,Not Enrolled,
+2104-3456,Hazel Coleman,2,Female,Not Enrolled,
+2105-4567,Owen Coleman,4,Male,Enrolled,BSIS
