@@ -136,6 +136,7 @@ class AddCourseWindow:
                 update = process.read_csv("Courses.csv")
                 update_len = len(update)
                 self.main_window_class.set_desc_combo([update[row][1]+" ("+update[row][0]+")" for row in range(1,update_len)])
+                self.window.destroy()
             else:
                 self.window.lift()
         else:
@@ -149,13 +150,14 @@ class AddCourseWindow:
             self.add_course_button['state'] = "disabled"
         
 class AddStudentWindow:
-    def __init__(self, main_window):
+    def __init__(self, main_window, main_window_class):
         process = Processing
         self.stud_data = process.read_csv("Students.csv")
         self.course_data = process.read_csv("Courses.csv")
         year_range = ['1', '2', '3', '4']
         
         self.main_window = main_window
+        self.main_window_class = main_window_class
         self.window = tk.Toplevel(self.main_window)
         self.window.title("Add Student")
         self.window.geometry("300x160")
@@ -217,14 +219,13 @@ class AddStudentWindow:
     def add_student(self):
         process = Processing
         self.stud_data = process.read_csv("Students.csv")
-        main = MainWindow(self.main_window)
         students_id = [self.stud_data[row][0]
                         for row in range(1,len(self.stud_data))]
         students_name = [self.stud_data[row][1]
                         for row in range(1,len(self.stud_data))]
         self.courses_var = self.courses_combo.get()
         self.enrollment_status_var = self.enroll_combo.get()
-        self.add_student = [self.entry_dict["ID Number:"].get(), 
+        self.new_student = [self.entry_dict["ID Number:"].get(), 
                             self.entry_dict["Name:"].get(), 
                             self.entry_dict["Year Level:"].get(), 
                             self.entry_dict["Gender:"].get(), 
@@ -238,11 +239,13 @@ class AddStudentWindow:
                 messagebox.showinfo(title="Action Successful", message="Student Added succesfully")
                 with open("Students.csv", "a", newline="") as students_file:
                     writer = csv.writer(students_file)
-                    writer.writerow(self.add_student)
+                    writer.writerow(self.new_student)
 
                 update = process.read_csv("Students.csv")
-                main.set_id_combo([update[row][0] for row in range(1,len(update))])
+                update_len = len(update)
+                self.main_window_class.set_id_combo([update[row][1] + " ("+update[row][0]+")" for row in range(1,update_len)])
                 process.show_students(update)
+                self.window.destroy()
             else:
                 self.window.lift()
 
@@ -268,10 +271,6 @@ class AddStudentWindow:
                 self.add_button["state"] = "disabled"
         else:
             self.add_button["state"] = "disabled"
-        
-
-             
-        
 
     def allow_course_combo(self, event):
         picked = self.enroll_combo.get()
@@ -287,7 +286,7 @@ class AddStudentWindow:
         self.courses_combo['values'] = val
 
 class EditStudentWindow:
-    def __init__(self, main_window, id, name, year, gender, enroll, course):
+    def __init__(self, main_window, main_window_class, id, name, year, gender, enroll, course):
         process = Processing
         self.course_data = process.read_csv("Courses.csv")
         year_range = ['1', '2', '3', '4']
@@ -299,6 +298,7 @@ class EditStudentWindow:
         self.window.geometry("300x160")
         self.window.resizable(False, False)
 
+        self.main_window_class = main_window_class
         self.id_str = tk.StringVar(self.window, value=id)
         self.name_str = tk.StringVar(self.window, value=name)
         self.year_str = tk.StringVar(self.window, value=year)
@@ -364,6 +364,7 @@ class EditStudentWindow:
     
     def edit_student(self):
         process = Processing
+        main = MainWindow
         self.courses_var = self.courses_combo.get()
         self.enrollment_status_var = self.enroll_combo.get()
         self.rows = process.read_csv("Students.csv")
@@ -384,7 +385,10 @@ class EditStudentWindow:
                     writer = csv.writer(file)
                     writer.writerows(self.rows)
             messagebox.showinfo(title="Action Succesful", message="Edit Successful")
+            self.stud_data = process.read_csv("Students.csv")
+            self.main_window_class.set_id_combo([self.stud_data[row][1] + " ("+self.stud_data[row][0]+")" for row in range(1,len(self.stud_data))])
             process.show_students(self.rows)
+            self.window.destroy()
         else:
             self.window.lift()
 
@@ -458,6 +462,7 @@ class MainWindow:
     
     def set_id_combo(self, val):
         self.stud_list['values'] = val
+        self.stud_list.set("")
 
     def set_desc_combo(self, val):
         self.desc_list['values'] = val
@@ -499,11 +504,11 @@ class MainWindow:
             self.specific_id = self.get_id[1].split(')')
             for i in range(num_rows):
                 if self.stud_data[i][0]==self.specific_id[0]:
-                    edit_student_window = EditStudentWindow(self.window, self.specific_id[0], self.stud_data[i][1], 
+                    edit_student_window = EditStudentWindow(self.window, self, self.specific_id[0], self.stud_data[i][1], 
                                                             self.stud_data[i][2], self.stud_data[i][3], self.stud_data[i][4], self.stud_data[i][5])
 
     def open_add_student_window(self):
-        add_student_window = AddStudentWindow(self.window)
+        add_student_window = AddStudentWindow(self.window,self)
     
     def delete_student(self):
         process = Processing
@@ -527,7 +532,8 @@ class MainWindow:
                             writer.writerows(rem_row)
             messagebox.showinfo(title="Action Successful", message="Student successfully deleted")
             self.stud_list['textvariable'] = tk.StringVar(value="")
-            self.set_id_combo([rem_row[row][0] for row in range(1,len(rem_row))])
+            self.stud_data = process.read_csv("Students.csv")
+            self.set_id_combo([self.stud_data[row][1] + " ("+self.stud_data[row][0]+")" for row in range(1,len(self.stud_data))])
             process.show_students(rem_row)
 
     def open_add_course_window(self):
