@@ -230,12 +230,8 @@ class AddStudentWindow:
                             self.entry_dict["Gender:"].get(), 
                             self.enrollment_status_var, self.courses_var]
         
-        if self.entry_dict["ID Number:"].get() in students_id and self.entry_dict["Name:"].get() in students_name:
+        if self.entry_dict["ID Number:"].get() in students_id or self.entry_dict["Name:"].get() in students_name:
             messagebox.showerror(title='ID Error',message="Student already exists")
-        elif len(self.entry_dict["ID Number:"].get())!=9:
-            messagebox.showwarning(title="Lacking characters", message="Your inputted ID isn't the expected lenght (Ex. 1111-2222)")
-        elif self.id_str[4] != "-":
-            messagebox.showwarning(title="No tilde", message="Your inputted ID has no tilde/tilde isn't in correct position (Ex. 1111-2222)")
         else:
             result  = messagebox.askquestion(title="Exit Add Student",message="Is your Added Student final")
             if result == "yes":
@@ -253,15 +249,26 @@ class AddStudentWindow:
     def allow_add_button(self, event):
         self.id_str = self.entry_dict["ID Number:"].get()
         id_to_int = self.id_str[0:3] + self.id_str[5:8]
+        allow = False
         try:
             id_int = int(id_to_int)
+            allow = True 
             pass
         except(ValueError):
             self.add_button["state"] = "disabled"
-        if all(entry.get() for entry in self.entry_dict.values()):
-            self.add_button["state"] = "normal"
+        
+
+        if all(entry.get() for entry in self.entry_dict.values()) and allow == True:
+            if len(self.entry_dict["ID Number:"].get())==9:
+                if self.id_str[4] == "-":
+                    self.add_button["state"] = "normal"
+                else:
+                    self.add_button["state"] = "disabled"
+            else:
+                self.add_button["state"] = "disabled"
         else:
             self.add_button["state"] = "disabled"
+        
 
              
         
